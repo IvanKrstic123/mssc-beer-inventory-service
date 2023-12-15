@@ -19,9 +19,9 @@ public class BeerInvntoryBootstrap implements CommandLineRunner {
     public static final String BEER_1_UPC = "0631234200036";
     public static final String BEER_2_UPC = "0631234300019";
     public static final String BEER_3_UPC = "0083783375213";
-    public static final UUID BEER_1_UUID = UUID.fromString("0a818933-087d-47f2-ad83-2f986ed087eb");
-    public static final UUID BEER_2_UUID = UUID.fromString("a712d914-61ea-4623-8bd0-32c0f6545bfd");
-    public static final UUID BEER_3_UUID = UUID.fromString("026cc3c8-3a0c-4083-a05b-e908048c1b08");
+    public static final UUID BEER_1_UUID = UUID.fromString("269a4325-7bcd-4549-a2c8-27bb9771535d");
+    public static final UUID BEER_2_UUID = UUID.fromString("33b792c1-7cb1-481a-949a-b381447665f8");
+    public static final UUID BEER_3_UUID = UUID.fromString("89939099-9a83-4296-bb61-b7fd632958e5");
 
     private final BeerInventoryRepository beerInventoryRepository;
 
@@ -44,14 +44,14 @@ public class BeerInvntoryBootstrap implements CommandLineRunner {
                 .builder()
                 .beerId(BEER_2_UUID)
                 .upc(BEER_2_UPC)
-                .quantityOnHand(50)
+                .quantityOnHand(60)
                 .build());
 
         beerInventoryRepository.saveAndFlush(BeerInventory
                 .builder()
                 .beerId(BEER_3_UUID)
                 .upc(BEER_3_UPC)
-                .quantityOnHand(50)
+                .quantityOnHand(70)
                 .build());
 
         log.debug("Loaded Inventory. Record count: " + beerInventoryRepository.count());
